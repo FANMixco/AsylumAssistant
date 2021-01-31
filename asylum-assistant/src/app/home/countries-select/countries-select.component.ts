@@ -13,37 +13,37 @@ export class CountriesSelectComponent implements OnInit {
     {
       "id": 1,
       "name": "المغرب/Maroc",
-      "flag": "morocco.png"
+      "flag": "./assets/images/morocco.png"
     },
     {
       "id": 2,
       "name": "تونس/Tunisie",
-      "flag": "tunisia.png"
+      "flag": "./assets/images/tunisia.png"
     },
     {
       "id": 3,
       "name": "ليبيا/Libye",
-      "flag": "libya.png"
+      "flag": "./assets/images/libya.png"
     },
     {
       "id": 4,
       "name": "سوريا/Syria",
-      "flag": "syria.png"
+      "flag": "./assets/images/syria.png"
     },
     {
       "id": 5,
       "name": "عربي صحراوي/RASD",
-      "flag": "sahrawi.png"
+      "flag": "./assets/images/sahrawi.png"
     },
     {
       "id": 6,
       "name": "Nigeria",
-      "flag": "nigeria.png"
+      "flag": "./assets/images/nigeria.png"
     },
     {
       "id": 7,
       "name": "Mali",
-      "flag": "mali.png"
+      "flag": "./assets/images/mali.png"
     }
   ];
 

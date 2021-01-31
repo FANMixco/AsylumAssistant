@@ -1,3 +1,10 @@
-<select (change)="changeValue()" [(ngModel)]="selectedCountry">
-  <option *ngFor="let country of countriesList" [ngValue]="country.id">{{ country.name }}</option>
-  </select>
+<div class="container text-center">
+  <div class="form-group">
+    <label for="welcome"><b>Welcome</b></label>
+    <select class="form-control" title="Select your country" id="welcome" (change)="changeValue()" [(ngModel)]="selectedCountry">
+      <option *ngFor="let country of countriesList" [value]="country.id" [attr.data-thumbnail]="country.flag">{{ country.name }}</option>
+    </select>
+    <br >
+    <button type="button" class="btn btn-primary btn-block">Start</button>
+  </div>
+</div>
