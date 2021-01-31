@@ -1,16 +1,14 @@
 <div class="container text-center">
-  <div class="form-group">
-    <h2 for="welcome">Welcome</h2>
-    <p>Choose your Country</p>
+  <h2 for="welcome">Welcome</h2>
+  <p>Choose your Country</p>
 
-    <div>
-      <ul class="list-group">
-        <li *ngFor="let country of countriesList" class="list-group-item">
-          <a href="#">
-            <img class="countryImg" [src]="'/assets/img/countries/' + country.flag + '.png'" /> {{ country.name }}
-          </a>
-        </li>
-      </ul>
-    </div>
+  <div>
+    <ul class="list-group">
+      <li *ngFor="let country of countriesList" class="list-group-item">
+        <a href="#">
+          <img class="countryImg" [src]="'/assets/img/countries/' + country.flag + '.png'" /> {{ country.name }}
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
