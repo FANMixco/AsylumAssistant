@@ -1,10 +1,16 @@
 <div class="container text-center">
   <div class="form-group">
-    <label for="welcome"><b>Welcome</b></label>
-    <select class="form-control" title="Select your country" id="welcome" (change)="changeValue()" [(ngModel)]="selectedCountry">
-      <option *ngFor="let country of countriesList" [value]="country.id" [attr.data-thumbnail]="country.flag">{{ country.name }}</option>
-    </select>
-    <br >
-    <button type="button" class="btn btn-primary btn-block">Start</button>
+    <h2 for="welcome">Welcome</h2>
+    <p>Choose your Country</p>
+
+    <div>
+      <ul class="list-group">
+        <li *ngFor="let country of countriesList" class="list-group-item">
+          <a href="#">
+            <img class="countryImg" [src]="'/assets/img/countries/' + country.flag + '.png'" /> {{ country.name }}
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
