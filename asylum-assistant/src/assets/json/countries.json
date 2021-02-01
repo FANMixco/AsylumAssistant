@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "المغرب/Maroc",
+    "flag": "morocco"
+  },
+  {
+    "id": 2,
+    "name": "تونس/Tunisie",
+    "flag": "tunisia"
+  },
+  {
+    "id": 3,
+    "name": "ليبيا/Libye",
+    "flag": "libya"
+  },
+  {
+    "id": 4,
+    "name": "سوريا/Syria",
+    "flag": "syria"
+  },
+  {
+    "id": 5,
+    "name": "عربي صحراوي/RASD",
+    "flag": "sahrawi"
+  },
+  {
+    "id": 6,
+    "name": "Nigeria",
+    "flag": "nigeria"
+  },
+  {
+    "id": 7,
+    "name": "Mali",
+    "flag": "mali"
+  }
+]
