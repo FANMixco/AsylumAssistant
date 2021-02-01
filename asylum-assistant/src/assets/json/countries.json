@@ -33,5 +33,10 @@
     "id": 7,
     "name": "Mali",
     "flag": "mali"
+  },
+  {
+    "id": 8,
+    "name": "Venezuela",
+    "flag": "venezuela"
   }
 ]

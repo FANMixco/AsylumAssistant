@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-const countries = require('../../../assets/json/countries.json');
+import countries from '../../../assets/json/countries.json';
 
 @Component({
   selector: 'app-countries-select',
