@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import countries from '../../../assets/json/countries.json';
+import { Component, HostListener, OnInit } from '@angular/core';
+import {default as countries} from '../../../assets/json/countries.json';
 
 @Component({
   selector: 'app-countries-select',
@@ -12,15 +12,21 @@ export class CountriesSelectComponent implements OnInit {
 
   countriesList: Array<any> = countries;
 
+  public innerHeight: any;
+
   constructor() { }
 
   ngOnInit(): void {
     this.selectedCountry = -1;
-    //this.selectedCountry = this.countriesList.filter(a => a.defaultSelected)[0].value;
+    this.innerHeight = window.innerHeight * .75;
   }
 
   public changeValue() {
     this.selectedCountry = this.countriesList.filter(a => a.defaultSelected)[0].value;
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerHeight = window.innerHeight * .75;
+  }
 }

@@ -3,7 +3,7 @@
   <p>Choose your Country</p>
 
   <div>
-    <ul class="list-group">
+    <ul class="list-group" [style.height.px]="innerHeight">
       <li *ngFor="let country of countriesList" class="list-group-item">
         <a href="#">
           <img class="countryImg" [src]="'/assets/img/countries/' + country.flag + '.png'" /> {{ country.name }}
