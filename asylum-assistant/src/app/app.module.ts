@@ -8,13 +8,15 @@ import { CountriesSelectComponent } from './home/countries-select/countries-sele
 import { FormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
 import { IntroComponent } from './intro/intro.component';
+import { OptionsComponent } from './options/options.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountriesSelectComponent,
     FormComponent,
-    IntroComponent
+    IntroComponent,
+    OptionsComponent
   ],
   imports: [
     FormsModule,
