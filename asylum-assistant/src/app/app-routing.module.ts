@@ -3,10 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { CountriesSelectComponent } from './home/countries-select/countries-select.component';
 import { IntroComponent } from './intro/intro.component';
 
-
 const routes: Routes = [
-  { path: 'intro', component: IntroComponent },
-  { path: 'countries-select', component: CountriesSelectComponent },
+  { path: 'countries-select', component: CountriesSelectComponent, children:[{path:'intro',component:IntroComponent }] },
   { path: '',   redirectTo: '/countries-select', pathMatch: 'full' },
   { path: '**', component: CountriesSelectComponent }
 ];
