@@ -10,6 +10,7 @@ import { FormComponent } from './form/form.component';
 import { IntroComponent } from './intro/intro.component';
 import { OptionsComponent } from './options/options.component';
 import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AboutComponent } from './about/about.component';
     FormComponent,
     IntroComponent,
     OptionsComponent,
-    AboutComponent
+    AboutComponent,
+    HomeComponent
   ],
   imports: [
     FormsModule,

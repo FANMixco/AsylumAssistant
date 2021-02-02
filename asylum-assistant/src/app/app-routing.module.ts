@@ -4,7 +4,8 @@ import { CountriesSelectComponent } from './home/countries-select/countries-sele
 import { IntroComponent } from './intro/intro.component';
 
 const routes: Routes = [
-  { path: 'countries-select', component: CountriesSelectComponent, children:[{path:'intro',component:IntroComponent }] },
+  { path: 'intro', component: IntroComponent },
+  { path: 'countries-select', component: CountriesSelectComponent },
   { path: '',   redirectTo: '/countries-select', pathMatch: 'full' },
   { path: '**', component: CountriesSelectComponent }
 ];
