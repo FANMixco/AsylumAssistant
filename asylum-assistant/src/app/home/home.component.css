@@ -1,0 +1,10 @@
+img.countryImg {
+  width: 48px;
+}
+
+.list-group {
+  /*max-width: 25%;*/
+  margin: auto;
+  overflow:scroll;
+  -webkit-overflow-scrolling: touch;
+}

@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CountriesSelectComponent } from './home/countries-select/countries-select.component';
+import { HomeComponent } from './home/home.component';
 import { IntroComponent } from './intro/intro.component';
+import { OptionsComponent } from './options/options.component';
 
 const routes: Routes = [
   { path: 'intro', component: IntroComponent },
-  { path: 'countries-select', component: CountriesSelectComponent },
-  { path: '',   redirectTo: '/countries-select', pathMatch: 'full' },
-  { path: '**', component: CountriesSelectComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'options', component: OptionsComponent },
+  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
