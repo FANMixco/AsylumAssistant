@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-intro',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) {
+    sessionStorage.setItem('lng', this.route.snapshot.paramMap.get("lng"));
+  }
 
   ngOnInit(): void {
   }

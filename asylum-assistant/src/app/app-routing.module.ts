@@ -5,7 +5,7 @@ import { IntroComponent } from './intro/intro.component';
 import { OptionsComponent } from './options/options.component';
 
 const routes: Routes = [
-  { path: 'intro', component: IntroComponent },
+  { path: 'intro/:lng', component: IntroComponent },
   { path: 'home', component: HomeComponent },
   { path: 'options', component: OptionsComponent },
   { path: '',   redirectTo: '/home', pathMatch: 'full' },

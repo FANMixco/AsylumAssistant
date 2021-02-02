@@ -7,8 +7,6 @@ import {default as countries} from '../../assets/json/countries.json';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  selectedCountry: number = -1;
-
   countriesList: Array<any> = countries;
 
   public innerHeight: any;
@@ -16,12 +14,11 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.selectedCountry = -1;
     this.innerHeight = window.innerHeight * .75;
-  }
 
-  public changeValue() {
-    this.selectedCountry = this.countriesList.filter(a => a.defaultSelected)[0].value;
+    if (sessionStorage.getItem('lng')) {
+      window.location.href = `${document.location.origin}/options`;
+    }
   }
 
   @HostListener('window:resize', ['$event'])

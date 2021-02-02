@@ -2,7 +2,7 @@
   <h2 for="welcome">Choose an option</h2>
   <div class="card-deck">
     <div class="card text-center" style="width: 18rem;">
-      <a [routerLink]="['intro']" to [routerLink]="['/intro']">
+      <a [routerLink]="['/intro', lng]">
         <img class="card-img-top imgCards" src="../../assets/img/icons/refugee.png" alt="Intro">
         <div class="card-body">
           <h5 class="card-title">Intro</h5>
@@ -10,7 +10,7 @@
       </a>
     </div>
     <div class="card text-center" style="width: 18rem;">
-      <a [routerLink]="['form']" to [routerLink]="['/form']">
+      <a [routerLink]="['/form']">
         <img class="card-img-top imgCards" src="../../assets/img/icons/form.png" alt="Form">
         <div class="card-body">
           <h5 class="card-title">Fill out form</h5>
