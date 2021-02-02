@@ -8,6 +8,8 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class IntroComponent implements OnInit {
 
+  isDivVisible = false;
+
   constructor(private route: ActivatedRoute) {
     sessionStorage.setItem('lng', this.route.snapshot.paramMap.get("lng"));
   }
@@ -16,6 +18,6 @@ export class IntroComponent implements OnInit {
   }
 
   introEnded(): void {
-
+    this.isDivVisible = true;
   }
 }

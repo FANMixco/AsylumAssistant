@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    if (!sessionStorage.getItem('lng')) {
+      window.location.href = `${document.location.origin}/home`;
+    }
+  }
 
   ngOnInit(): void {
   }
