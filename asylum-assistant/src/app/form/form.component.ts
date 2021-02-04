@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -9,7 +10,19 @@ export class FormComponent implements OnInit {
 
   currentTab = 0; // Current tab is set to be the first tab (0)
 
-  constructor() {
+  asylumSeekerForm = this.formBuilder.group({
+    fName: '',
+    lName: '',
+    email: '',
+    tel: '',
+    day: 0,
+    month: 0,
+    year: 0,
+    username: '',
+    password: ''
+  });
+
+  constructor(private formBuilder: FormBuilder) {
     if (!sessionStorage.getItem('lng')) {
       window.location.href = `${document.location.origin}/home`;
     }
@@ -20,18 +33,27 @@ export class FormComponent implements OnInit {
     let x = document.getElementsByClassName("tab") as HTMLCollectionOf<HTMLElement>;
     x[n].style.display = "block";
     // ... and fix the Previous/Next buttons:
+
+    if (n == (x.length - 1)) {
+      document.getElementById("divOptions").style.display = "none";
+      return;
+    }
+
     if (n == 0) {
       document.getElementById("prevBtn").style.display = "none";
     } else {
       document.getElementById("prevBtn").style.display = "inline";
     }
-    if (n == (x.length - 1)) {
-      document.getElementById("nextBtn").innerHTML = "Submit";
+    if (n == (x.length - 2)) {
+      //(<HTMLInputElement>document.getElementById("nextBtn")).type = "submit";
+      document.getElementById("submitBtn").style.display = "inline";
+      document.getElementById("nextBtn").style.display = "none";
     } else {
-      document.getElementById("nextBtn").innerHTML = "Next";
+      document.getElementById("submitBtn").style.display = "none";
+      document.getElementById("nextBtn").style.display = "inline";
     }
     // ... and run a function that displays the correct step indicator:
-    this.fixStepIndicator(n)
+    this.fixStepIndicator(n);
   }
 
   nextPrev(n:number) {
@@ -43,13 +65,7 @@ export class FormComponent implements OnInit {
     x[this.currentTab].style.display = "none";
     // Increase or decrease the current tab by 1:
     this.currentTab = this.currentTab + n;
-    // if you have reached the end of the form... :
-    if (this.currentTab >= x.length) {
-      //...the form gets submitted:
-      //document.getElementById("regForm").submit();
-      return false;
-    }
-    // Otherwise, display the correct tab:
+
     this.showTab(this.currentTab);
   }
 
@@ -89,6 +105,14 @@ export class FormComponent implements OnInit {
     this.showTab(this.currentTab); // Display the current tab
   }
 
-
+  onSubmit(): void {
+    this.nextPrev(1);
+    console.log('form data', this.asylumSeekerForm);
+    console.log(this.asylumSeekerForm.controls['fName'].value);
+    console.log(this.asylumSeekerForm.controls['lName'].value);
+    console.log(this.asylumSeekerForm.controls['email'].value);
+    console.log(this.asylumSeekerForm.controls['tel'].value);
+    console.log(this.asylumSeekerForm.controls['username'].value);
+  }
 
 }
