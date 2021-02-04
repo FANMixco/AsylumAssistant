@@ -7,9 +7,17 @@
   "BtnVoice": "Voice",
   "BtnAbout": "About",
   "BtnChangeCountry": "Change Your Country",
+  "BtnReturn": "Return",
+  "BtnPrev": "Previous",
+  "BtnNext": "Next",
+  "BtnSubmit": "Submit",
   "ChooseOption": "Choose an option",
   "text1": "This is the 1st example",
   "text2": "This is the 2nd example",
   "text3": "This is the 3rd example",
-  "text4": "This is the 4th example"
+  "text4": "This is the 4th example",
+  "Step1": "Step #1",
+  "Step2": "Step #2",
+  "Step3": "Step #3",
+  "Step4": "Step #4"
 }

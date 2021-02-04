@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
-import {default as countries} from '../../assets/json/countries.json';
+import { default as countries } from '../../assets/json/countries.json';
 import { Globals } from '../globals';
 
 @Component({

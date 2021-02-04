@@ -1,5 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import {default as countries} from '../../assets/json/countries.json';
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { default as countries } from '../../assets/json/countries.json';
+import { Globals } from '../globals';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   public innerHeight: any;
 
-  constructor() { }
+  constructor(private translateService: TranslateService, private globals: Globals, private router: Router) { }
 
   ngOnInit(): void {
     this.innerHeight = window.innerHeight * .75;
@@ -21,8 +24,24 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  setLng(id:number) {
+    let tmpLng = 'en';
+    let cLng = countries[id].lng;
+
+    if (this.globals.availableLng.includes(cLng))
+      tmpLng = cLng;
+
+    this.translateService.setDefaultLang(tmpLng);
+
+    sessionStorage.setItem('lng', tmpLng);
+    sessionStorage.setItem('countryId', id.toString());
+
+    this.router.navigate(['/intro']);
+  }
+
   @HostListener('window:resize', ['$event'])
-  onResize(event) {
+  onResize(event:any) {
     this.innerHeight = window.innerHeight * .75;
   }
+
 }

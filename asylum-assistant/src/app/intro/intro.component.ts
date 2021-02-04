@@ -1,8 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
-import { TranslateService } from '@ngx-translate/core';
-import { Globals } from '../globals';
 
 @Component({
   selector: 'app-intro',
@@ -17,20 +14,9 @@ export class IntroComponent implements OnInit {
 
   readonly defaultVideo = `${window.location.origin}/assets/videos/en/intro.mp4`;
 
-  constructor(private route: ActivatedRoute, private httpClient: HttpClient, private translateService: TranslateService, private globals: Globals) {
-    this.lng = this.route.snapshot.paramMap.get("lng");
-    sessionStorage.setItem('lng', this.lng);
+  constructor(private httpClient: HttpClient) {
+    this.lng = sessionStorage.getItem('lng');
     this.path = this.getVideoPath();
-    this.setLng();
-  }
-
-  setLng():void {
-    let tmpLng = 'en';
-
-    if (this.globals.availableLng.includes(this.lng))
-      tmpLng = this.lng;
-
-    this.translateService.setDefaultLang(tmpLng);
   }
 
   ngOnInit(): void {
