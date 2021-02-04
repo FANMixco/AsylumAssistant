@@ -6,7 +6,7 @@
 </div>
 <div class="modal-body centered">
   <div class="modal-body">
-    <ul class="list-group">
+    <ul class="list-group text-center">
       <li *ngFor="let country of countriesList" class="list-group-item">
         <a (click)="changeCountry(country.id)">
           <img class="countryImg" [src]="'/assets/img/countries/' + country.flag + '.png'" /> {{ country.name }}
