@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Globals } from '../globals';
 
 @Component({
   selector: 'app-about',
@@ -8,7 +9,11 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(public activeModal: NgbActiveModal) { }
+  version:string = '';
+
+  constructor(public activeModal: NgbActiveModal, private globals: Globals) {
+    this.version = globals.version;
+  }
 
   ngOnInit(): void {
   }
