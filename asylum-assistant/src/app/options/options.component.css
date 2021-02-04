@@ -4,3 +4,7 @@ img.imgCards {
   margin: auto;
   padding-top: 15px;
 }
+
+.divCard {
+  width: 18rem;
+}
