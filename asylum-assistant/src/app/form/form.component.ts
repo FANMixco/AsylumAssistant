@@ -101,6 +101,10 @@ export class FormComponent implements OnInit {
     x[n].className += " active";
   }
 
+  textToSpeech(n:number) {
+
+  }
+
   ngOnInit(): void {
     this.showTab(this.currentTab); // Display the current tab
   }

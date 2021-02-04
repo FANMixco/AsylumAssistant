@@ -16,10 +16,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Globals } from './globals';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { TranslateComponent } from './translate/translate.component';
 
 export function translateHttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
-  //return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  //return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -29,7 +30,8 @@ export function translateHttpLoaderFactory(http: HttpClient) {
     IntroComponent,
     OptionsComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    TranslateComponent
   ],
   imports: [
     FormsModule,

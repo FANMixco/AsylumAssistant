@@ -6,5 +6,10 @@
   "BtnHelp": "Help Refugee Form",
   "BtnVoice": "Voice",
   "BtnAbout": "About",
-  "ChooseOption": "Choose an option"
+  "BtnChangeCountry": "Change Your Country",
+  "ChooseOption": "Choose an option",
+  "text1": "This is the 1st example",
+  "text2": "This is the 2nd example",
+  "text3": "This is the 3rd example",
+  "text4": "This is the 4th example"
 }
