@@ -6,5 +6,18 @@
   "BtnHelp": "Ayuda formulario para refugiado",
   "BtnVoice": "Voz",
   "BtnAbout": "Acerca de",
-  "ChooseOption": "Elija una opción"
+  "BtnChangeCountry": "Elige tu país",
+  "BtnReturn": "Regresar",
+  "BtnPrev": "Anterior",
+  "BtnNext": "Siguiente",
+  "BtnSubmit": "Enviar",
+  "ChooseOption": "Elija una opción",
+  "text1": "Este es el 1er ejemplo",
+  "text2": "Este es el 2do ejemplo",
+  "text3": "Este es el 3ro ejemplo",
+  "text4": "Este es el 4to ejemplo",
+  "Step1": "Paso #1",
+  "Step2": "Paso #2",
+  "Step3": "Paso #3",
+  "Step4": "Paso #4"
 }

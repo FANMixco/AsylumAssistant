@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { default as countries } from '../../assets/json/countries.json';
+import { Globals } from '../globals';
 
 @Component({
   selector: 'app-form',
@@ -9,6 +12,9 @@ import { FormBuilder } from '@angular/forms';
 export class FormComponent implements OnInit {
 
   currentTab = 0; // Current tab is set to be the first tab (0)
+  translations: any;
+  currentLng = 'en-US';
+  synth = window.speechSynthesis;
 
   asylumSeekerForm = this.formBuilder.group({
     fName: '',
@@ -22,9 +28,15 @@ export class FormComponent implements OnInit {
     password: ''
   });
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private translateService: TranslateService, private globals: Globals) {
     if (!sessionStorage.getItem('lng')) {
       window.location.href = `${document.location.origin}/home`;
+    }
+
+    let currentCountryLng = countries[sessionStorage.getItem('countryId')].t2s;
+
+    if (this.globals.availableLng.includes(currentCountryLng)) {
+      this.currentLng = currentCountryLng;
     }
   }
 
@@ -101,8 +113,55 @@ export class FormComponent implements OnInit {
     x[n].className += " active";
   }
 
+  textToSpeechOff(n:number) {
+    document.getElementById(`btnSpeech${n}`).style.display = 'inline';
+    document.getElementById(`btnSpeechOff${n}`).style.display = 'none';
+    this.synth.cancel();
+  }
+
+  textToSpeech(n:number) {
+    document.getElementById(`btnSpeech${n}`).style.display = 'none';
+    document.getElementById(`btnSpeechOff${n}`).style.display = 'inline';
+
+    let text = '';
+
+    switch (n) {
+      case 1:
+        text = this.translations.text1;
+        break;
+      case 2:
+        text = this.translations.text2;
+        break;
+      case 3:
+        text = this.translations.text3;
+        break;
+      default:
+        text = this.translations.text4;
+        break;
+    }
+
+    let msg2Speech = new SpeechSynthesisUtterance(text);
+    msg2Speech.lang = this.currentLng;
+
+    this.synth.speak(msg2Speech);
+
+    msg2Speech.onend = function() {
+      document.getElementById(`btnSpeech${n}`).style.display = 'inline';
+      document.getElementById(`btnSpeechOff${n}`).style.display = 'none';
+    }
+  }
+
   ngOnInit(): void {
     this.showTab(this.currentTab); // Display the current tab
+    this.translations = this.translateService.store.translations[`${sessionStorage.getItem('lng')}`];
+
+    if (!this.translations) {
+      let x = document.getElementsByClassName("tab");
+
+      for (let i = 0; i < x.length - 2; i++) {
+        document.getElementById(`btnSpeech${i + 1}`).style.display = 'none';
+      }
+    }
   }
 
   onSubmit(): void {

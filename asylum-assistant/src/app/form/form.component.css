@@ -11,7 +11,7 @@ input.invalid {
 }
 
 /* Hide all steps by default: */
-.tab {
+.tab, .speakerDisabled, .btnOff {
   display: none;
 }
 
@@ -35,4 +35,21 @@ input.invalid {
 /* Mark the steps that are finished and valid: */
 .step.finish {
   background-color: #4CAF50;
+}
+
+.speaker {
+  width: 32px;
+}
+
+.divSteps {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#divOptions {
+  overflow: auto;
+}
+
+#divOptionsInner {
+  float:right;
 }

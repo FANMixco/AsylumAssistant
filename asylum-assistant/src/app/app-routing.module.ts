@@ -6,7 +6,7 @@ import { IntroComponent } from './intro/intro.component';
 import { OptionsComponent } from './options/options.component';
 
 const routes: Routes = [
-  { path: 'intro/:lng', component: IntroComponent },
+  { path: 'intro', component: IntroComponent },
   { path: 'home', component: HomeComponent },
   { path: 'form', component: FormComponent },
   { path: 'options', component: OptionsComponent },

@@ -4,27 +4,39 @@
 
   <!-- One "tab" for each step in the form: -->
   <div class="tab">
-    <h2>Step #1</h2>
+    <h2 translate>Step1</h2>
     <div class="form-group">
       <input placeholder="First name..." formControlName="fName" oninput="this.className = ''" class="form-control" />
     </div>
     <div class="form-group">
       <input placeholder="Last name..." formControlName="lName" oninput="this.className = ''" class="form-control" />
     </div>
+    <a (click)="textToSpeech(1)" id="btnSpeech1">
+      <img class="speaker" src="../../assets/img/icons/speaker.png" alt="text to speech" />
+    </a>
+    <a (click)="textToSpeechOff(1)" class="speakerDisabled" id="btnSpeechOff1">
+      <img class="speaker" src="../../assets/img/icons/speaker-off.png" alt="stop" />
+    </a>
   </div>
 
   <div class="tab">
-    <h2>Step #2</h2>
+    <h2 translate>Step2</h2>
     <div class="form-group">
       <input placeholder="E-mail..." formControlName="email" oninput="this.className = ''" class="form-control" />
     </div>
     <div class="form-group">
       <input placeholder="Phone..." formControlName="tel" oninput="this.className = ''" class="form-control" />
     </div>
+    <a (click)="textToSpeech(2)" id="btnSpeech2">
+      <img class="speaker" src="../../assets/img/icons/speaker.png" alt="text to speech" />
+    </a>
+    <a (click)="textToSpeechOff(2)" class="speakerDisabled" id="btnSpeechOff2">
+      <img class="speaker" src="../../assets/img/icons/speaker-off.png" alt="stop" />
+    </a>
   </div>
 
   <div class="tab">
-    <h2>Step #3</h2>
+    <h2 translate>Step3</h2>
     <h3>Birthday</h3>
     <div class="form-group">
       <input type="number" placeholder="dd" formControlName="day" oninput="this.className = ''" class="form-control" />
@@ -35,34 +47,46 @@
     <div class="form-group">
       <input type="number" placeholder="yyyy" formControlName="year" oninput="this.className = ''" class="form-control" />
     </div>
+    <a (click)="textToSpeech(3)" id="btnSpeech3">
+      <img class="speaker" src="../../assets/img/icons/speaker.png" alt="text to speech" />
+    </a>
+    <a (click)="textToSpeechOff(3)" class="speakerDisabled" id="btnSpeechOff3">
+      <img class="speaker" src="../../assets/img/icons/speaker-off.png" alt="stop" />
+    </a>
   </div>
 
   <div class="tab">
-    <h2>Step #4</h2>
+    <h2 translate>Step4</h2>
     <div class="form-group">
       <input placeholder="Username..." formControlName="username" oninput="this.className = ''" class="form-control" />
     </div>
     <div class="form-group">
       <input placeholder="Password..." formControlName="password" type="password" oninput="this.className = ''" class="form-control" />
     </div>
+    <a (click)="textToSpeech(4)" id="btnSpeech4">
+      <img class="speaker" src="../../assets/img/icons/speaker.png" alt="text to speech" />
+    </a>
+    <a (click)="textToSpeechOff(4)" class="speakerDisabled" id="btnSpeechOff4">
+      <img class="speaker" src="../../assets/img/icons/speaker-off.png" alt="stop" />
+    </a>
   </div>
 
   <div class="tab">
     <h2>Submitted</h2>
     <br />
-    <a [routerLink]="['/options']" class="btn btn-success">Return</a>
+    <a [routerLink]="['/options']" class="btn btn-success" translate>BtnReturn</a>
   </div>
 
-  <div style="overflow:auto;" id="divOptions">
-    <div style="float:right;">
-      <button type="button" id="prevBtn" (click)="nextPrev(-1)">Previous</button>
-      <button type="button" id="nextBtn" (click)="nextPrev(1)">Next</button>
-      <button type="submit" id="submitBtn" style="display: none">Submit</button>
+  <div id="divOptions">
+    <div id="divOptionsInner">
+      <button type="button" id="prevBtn" class="btn btn-secondary" (click)="nextPrev(-1)" translate>BtnPrev</button>
+      <button type="button" id="nextBtn" class="btn btn-primary" (click)="nextPrev(1)" translate>BtnNext</button>
+      <button type="submit" id="submitBtn" class="btnOff btn btn-success" translate>BtnSubmit</button>
     </div>
   </div>
 
   <!-- Circles which indicates the steps of the form: -->
-  <div style="text-align:center;margin-top:40px;">
+  <div class="divSteps">
     <span class="step"></span>
     <span class="step"></span>
     <span class="step"></span>
