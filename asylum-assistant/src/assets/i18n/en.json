@@ -1,4 +1,10 @@
 {
   "WelcomeMessage": "Welcome to Spain",
-  "ChooseCountry": "Choose Your Country of Origin"
+  "ChooseCountry": "Choose Your Country of Origin",
+  "BtnContinue": "Continue",
+  "BtnIntro": "Intro",
+  "BtnHelp": "Help Refugee Form",
+  "BtnVoice": "Voice",
+  "BtnAbout": "About",
+  "ChooseOption": "Choose an option"
 }

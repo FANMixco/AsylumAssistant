@@ -1,4 +1,10 @@
 {
   "WelcomeMessage": "Bienvenido a España",
-  "ChooseCountry": "Elige tu país de origen"
+  "ChooseCountry": "Elige tu país de origen",
+  "BtnContinue": "Continuar",
+  "BtnIntro": "Introducción",
+  "BtnHelp": "Ayuda formulario para refugiado",
+  "BtnVoice": "Voz",
+  "BtnAbout": "Acerca de",
+  "ChooseOption": "Elija una opción"
 }
