@@ -1,1 +1,38 @@
-<p>options works!</p>
+<div class="container text-center">
+  <h2 for="welcome">Choose an option</h2>
+  <div class="card-deck">
+    <div class="card text-center" style="width: 18rem;">
+      <a [routerLink]="['/intro', lng]">
+        <img class="card-img-top imgCards" src="../../assets/img/icons/refugee.png" alt="Intro">
+        <div class="card-body">
+          <h5 class="card-title">Intro</h5>
+        </div>
+      </a>
+    </div>
+    <div class="card text-center" style="width: 18rem;">
+      <a [routerLink]="['/form']">
+        <img class="card-img-top imgCards" src="../../assets/img/icons/form.png" alt="Form">
+        <div class="card-body">
+          <h5 class="card-title">Fill out form</h5>
+        </div>
+      </a>
+    </div>
+    <div class="card text-center" style="width: 18rem;">
+      <a href="#">
+        <img class="card-img-top imgCards" src="../../assets/img/icons/voice.png" alt="Voice">
+        <div class="card-body">
+          <h5 class="card-title">Voice</h5>
+        </div>
+      </a>
+    </div>
+    <div class="card text-center" style="width: 18rem;">
+      <a href="#">
+        <img class="card-img-top imgCards" src="../../assets/img/icons/about.png" alt="About">
+        <div class="card-body">
+          <h5 class="card-title">About</h5>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

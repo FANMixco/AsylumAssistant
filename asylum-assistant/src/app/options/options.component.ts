@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OptionsComponent implements OnInit {
 
-  constructor() { }
+  lng: string;
+
+  constructor() {
+    this.lng = sessionStorage.getItem('lng');
+   }
 
   ngOnInit(): void {
   }

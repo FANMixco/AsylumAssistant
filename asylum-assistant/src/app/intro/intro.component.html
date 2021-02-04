@@ -1,1 +1,10 @@
-<p>intro works!</p>
+<div>
+  <video class="video-fluid z-depth-1" playsinline autoplay webkit-playsinline controls (ended)="introEnded()">
+    <source src="../../assets/videos/en/intro.mp4" type="video/mp4" />
+  </video>
+</div>
+
+<div class="text-right" [style.visibility]="isDivVisible ? 'visible' : 'hidden'">
+  <a [routerLink]="['/options']" class="btn btn-success">Next</a>
+</div>
+<router-outlet></router-outlet>
