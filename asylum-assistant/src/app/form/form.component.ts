@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { default as countries } from '../../assets/json/countries.json';
 import { Globals } from '../globals';
 
 @Component({
@@ -13,7 +12,7 @@ export class FormComponent implements OnInit {
 
   currentTab = 0; // Current tab is set to be the first tab (0)
   translations: any;
-  currentLng = 'en-US';
+  //currentLng = 'en-US';
   synth = window.speechSynthesis;
 
   asylumSeekerForm = this.formBuilder.group({
@@ -31,12 +30,6 @@ export class FormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private translateService: TranslateService, private globals: Globals) {
     if (!sessionStorage.getItem('lng')) {
       window.location.href = `${document.location.origin}/home`;
-    }
-
-    let currentCountryLng = countries[sessionStorage.getItem('countryId')].t2s;
-
-    if (this.globals.availableLng.includes(currentCountryLng)) {
-      this.currentLng = currentCountryLng;
     }
   }
 
@@ -141,7 +134,7 @@ export class FormComponent implements OnInit {
     }
 
     let msg2Speech = new SpeechSynthesisUtterance(text);
-    msg2Speech.lang = this.currentLng;
+    msg2Speech.lang = sessionStorage.getItem('t2sLang');
 
     this.synth.speak(msg2Speech);
 
@@ -155,7 +148,7 @@ export class FormComponent implements OnInit {
     this.showTab(this.currentTab); // Display the current tab
     this.translations = this.translateService.store.translations[`${sessionStorage.getItem('lng')}`];
 
-    if (!this.translations) {
+    if (!this.translations || !('speechSynthesis' in window)) {
       let x = document.getElementsByClassName("tab");
 
       for (let i = 0; i < x.length - 2; i++) {

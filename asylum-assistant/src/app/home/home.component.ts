@@ -2,6 +2,8 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { default as countries } from '../../assets/json/countries.json';
+import { GetLanguages } from '../extensions/get-languages';
+import { VoicesClassifier } from '../extensions/voices-classifier';
 import { Globals } from '../globals';
 
 @Component({
@@ -26,10 +28,13 @@ export class HomeComponent implements OnInit {
 
   setLng(id:number) {
     let tmpLng = 'en';
-    let cLng = countries[id].lng;
+    let cLng = countries[id - 1].lng;
+    let getLanguages = new GetLanguages(this.globals);
+    let aLang = getLanguages.isLangAvailable(cLng);
 
-    if (this.globals.availableLng.includes(cLng))
-      tmpLng = cLng;
+    tmpLng = aLang[0];
+
+    new VoicesClassifier(aLang[1]);
 
     this.translateService.setDefaultLang(tmpLng);
 

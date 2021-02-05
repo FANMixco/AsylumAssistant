@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AboutComponent } from '../about/about.component';
 import { TranslateComponent } from '../translate/translate.component';
@@ -14,7 +15,7 @@ export class OptionsComponent implements OnInit {
 
   constructor(private modalService: NgbModal) {
     this.lng = sessionStorage.getItem('lng');
-   }
+  }
 
   ngOnInit(): void {
   }
@@ -25,5 +26,12 @@ export class OptionsComponent implements OnInit {
 
   openChangeLng() {
     this.modalService.open(TranslateComponent, { scrollable: true });
+  }
+
+  close() {
+    sessionStorage.clear();
+    setTimeout(function () {
+        window.location.replace(document.location.origin);
+    }, 1000);
   }
 }
