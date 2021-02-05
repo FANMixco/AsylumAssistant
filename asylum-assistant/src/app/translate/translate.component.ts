@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { default as countries } from '../../assets/json/countries.json';
+import { GetLanguages } from '../extensions/get-languages';
+import { VoicesClassifier } from '../extensions/voices-classifier';
 import { Globals } from '../globals';
 
 @Component({
@@ -20,11 +22,15 @@ export class TranslateComponent implements OnInit {
   changeCountry(id:number){
     let tmpLng = 'en';
     let currentLng = this.countriesList[id - 1].lng;
+    let getLanguages = new GetLanguages(this.globals);
+    let aLang = getLanguages.isLangAvailable(currentLng);
 
-    if (this.globals.availableLng.includes(currentLng))
-      tmpLng = currentLng;
+    tmpLng = aLang[0];
+
+    new VoicesClassifier(aLang[1]);
 
     this.translateService.setDefaultLang(tmpLng);
+
     this.activeModal.close();
   }
 

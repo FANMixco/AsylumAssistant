@@ -17,6 +17,7 @@ import { Globals } from './globals';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { TranslateComponent } from './translate/translate.component';
+import { GetLanguages } from './extensions/get-languages';
 
 export function translateHttpLoaderFactory(http: HttpClient) {
   //return new TranslateHttpLoader(http);
@@ -59,13 +60,11 @@ export class AppModule {
   }
 
   setLng():void {
-    let tmpLng = 'en';
+    let currentLng = (sessionStorage.getItem('lng') === undefined) ? window.navigator.language.substring(0, 2) : sessionStorage.getItem('lng');
 
-    let currentLng = window.navigator.language.substring(0, 2);
+    let getLanguages = new GetLanguages(this.globals);
+    let aLang = getLanguages.isLangAvailable(currentLng);
 
-    if (this.globals.availableLng.includes(currentLng))
-      tmpLng = currentLng;
-
-    this.translateService.setDefaultLang(tmpLng);
+    this.translateService.setDefaultLang(aLang[0]);
   }
 }
