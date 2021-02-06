@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "المغرب/Maroc",
+    "flag": "morocco",
+    "lng": "ar",
+    "t2s": "ar-MA"
+  },
+  {
+    "id": 2,
+    "name": "تونس/Tunisie",
+    "flag": "tunisia",
+    "lng": "ar",
+    "t2s": "ar-TN"
+  },
+  {
+    "id": 3,
+    "name": "ليبيا/Libye",
+    "flag": "libya",
+    "lng": "ar",
+    "t2s": "ar-LY"
+  },
+  {
+    "id": 4,
+    "name": "سوريا/Syria",
+    "flag": "syria",
+    "lng": "ar",
+    "t2s": "ar-SY"
+  },
+  {
+    "id": 5,
+    "name": "الصحراء الغربية‎‎/Sáhara Occidental",
+    "flag": "sahrawi",
+    "lng": "ar",
+    "t2s": "ar-MA"
+  },
+  {
+    "id": 6,
+    "name": "Nigeria",
+    "flag": "nigeria",
+    "lng": "en",
+    "t2s": "en-GB"
+  },
+  {
+    "id": 7,
+    "name": "Mali",
+    "flag": "mali",
+    "lng": "fr",
+    "t2s": "fr-FR"
+  },
+  {
+    "id": 8,
+    "name": "Venezuela",
+    "flag": "venezuela",
+    "lng": "es",
+    "t2s": "es-VE"
+  }
+]
