@@ -12,7 +12,7 @@ export class IntroComponent implements OnInit {
   lng = 'en';
   path = '';
 
-  readonly defaultVideo = `${window.location.origin}/assets/videos/en/intro.mp4`;
+  readonly defaultVideo = `assets/videos/en/intro.mp4`;
 
   constructor(private httpClient: HttpClient) {
     this.lng = sessionStorage.getItem('lng');
