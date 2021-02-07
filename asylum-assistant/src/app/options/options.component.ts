@@ -11,10 +11,7 @@ import { TranslateComponent } from '../translate/translate.component';
 })
 export class OptionsComponent implements OnInit {
 
-  lng: string;
-
-  constructor(private modalService: NgbModal) {
-    this.lng = sessionStorage.getItem('lng');
+  constructor(private modalService: NgbModal, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -30,8 +27,8 @@ export class OptionsComponent implements OnInit {
 
   close() {
     sessionStorage.clear();
-    setTimeout(function () {
-        window.location.replace(document.location.origin);
+    setTimeout(() => {
+        this.router.navigate(['/home']);
     }, 1000);
   }
 }

@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
     this.innerHeight = window.innerHeight * .75;
 
     if (sessionStorage.getItem('lng')) {
-      window.location.href = `${document.location.origin}/options`;
+      this.router.navigate(['/options']);
     }
   }
 
