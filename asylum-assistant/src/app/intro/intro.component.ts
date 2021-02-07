@@ -27,7 +27,7 @@ export class IntroComponent implements OnInit {
   }
 
   getVideoPath(): string {
-    let tmpPath = `${window.location.origin}/assets/videos/${this.lng}/intro.mp4`;
+    let tmpPath = `assets/videos/${this.lng}/intro.mp4`;
     this.httpClient.get(tmpPath).subscribe(() => {
       return tmpPath;
     }, (err) => {
