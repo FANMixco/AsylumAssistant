@@ -1,3 +1,7 @@
 img.countryImg {
   width: 48px;
 }
+
+a {
+  cursor: pointer;
+}
