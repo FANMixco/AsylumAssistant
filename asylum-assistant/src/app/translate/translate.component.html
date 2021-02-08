@@ -9,7 +9,7 @@
     <ul class="list-group text-center">
       <li *ngFor="let country of countriesList" class="list-group-item">
         <a (click)="changeCountry(country.id)">
-          <img class="countryImg" [src]="'/assets/img/countries/' + country.flag + '.png'" /> {{ country.name }}
+          <img class="countryImg" [src]="'assets/img/countries/' + country.flag + '.png'" /> {{ country.name }}
         </a>
       </li>
     </ul>
