@@ -12,7 +12,7 @@ import { Globals } from '../globals';
   styleUrls: ['./translate.component.css']
 })
 export class TranslateComponent implements OnInit {
-  countriesList: Array<any> = countries;
+  countriesList: Array<any> = countries.filter(function(el) { return el.isSupported });
 
   constructor(public activeModal: NgbActiveModal, private translateService: TranslateService, private globals: Globals) { }
 

@@ -12,7 +12,7 @@ import { Globals } from '../globals';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  countriesList: Array<any> = countries;
+  countriesList: Array<any> = countries.filter(function(el) { return el.isSupported });
 
   public innerHeight: any;
 

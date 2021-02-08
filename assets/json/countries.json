@@ -4,55 +4,63 @@
     "name": "المغرب/Maroc",
     "flag": "morocco",
     "lng": "ar",
-    "t2s": "ar-MA"
+    "t2s": "ar-MA",
+    "isSupported": true
   },
   {
     "id": 2,
     "name": "تونس/Tunisie",
     "flag": "tunisia",
     "lng": "ar",
-    "t2s": "ar-TN"
+    "t2s": "ar-TN",
+    "isSupported": true
   },
   {
     "id": 3,
     "name": "ليبيا/Libye",
     "flag": "libya",
     "lng": "ar",
-    "t2s": "ar-LY"
+    "t2s": "ar-LY",
+    "isSupported": false
   },
   {
     "id": 4,
     "name": "سوريا/Syria",
     "flag": "syria",
     "lng": "ar",
-    "t2s": "ar-SY"
+    "t2s": "ar-SY",
+    "isSupported": true
   },
   {
     "id": 5,
     "name": "الصحراء الغربية‎‎/Sáhara Occidental",
     "flag": "sahrawi",
     "lng": "ar",
-    "t2s": "ar-MA"
+    "t2s": "ar-MA",
+    "isSupported": true
   },
   {
     "id": 6,
     "name": "Nigeria",
     "flag": "nigeria",
     "lng": "en",
-    "t2s": "en-GB"
+    "t2s": "en-GB",
+    "isSupported": true
   },
   {
     "id": 7,
     "name": "Mali",
     "flag": "mali",
     "lng": "fr",
-    "t2s": "fr-FR"
+    "t2s": "fr-FR",
+    "isSupported": true
   },
   {
     "id": 8,
     "name": "Venezuela",
     "flag": "venezuela",
     "lng": "es",
-    "t2s": "es-VE"
+    "t2s": "es-VE",
+    "isSupported": true
   }
 ]
