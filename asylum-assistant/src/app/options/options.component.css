@@ -4,3 +4,8 @@ img.imgCards {
   margin: auto;
   padding-top: 15px;
 }
+
+a {
+  color: black;
+  cursor: pointer;
+}
