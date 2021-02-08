@@ -1,10 +1,17 @@
-<div>
-  <video class="video-fluid z-depth-1" playsinline autoplay webkit-playsinline controls (ended)="introEnded()">
-    <source [src]="path" type="video/mp4" />
-  </video>
+<div class="d-flex align-items-center justify-content-center h-100">
+  <div class="d-flex flex-column">
+    <h2 translate>LearnMore</h2>
+
+    <div>
+      <video id="introVid" [class]="videoClass" playsinline autoplay webkit-playsinline controls (ended)="introEnded()">
+        <source [src]="path" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="text-right" [style.visibility]="isDivVisible ? 'visible' : 'hidden'">
+      <a [routerLink]="['/options']" class="btn btn-success" translate>BtnContinue</a>
+    </div>
+  </div>
 </div>
 
-<div class="text-right" [style.visibility]="isDivVisible ? 'visible' : 'hidden'">
-  <a [routerLink]="['/options']" class="btn btn-success" translate>BtnContinue</a>
-</div>
 <router-outlet></router-outlet>
