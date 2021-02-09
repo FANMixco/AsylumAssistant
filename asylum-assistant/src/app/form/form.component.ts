@@ -115,6 +115,7 @@ export class FormComponent implements OnInit {
   textToSpeech(n:number) {
     document.getElementById(`btnSpeech${n}`).style.display = 'none';
     document.getElementById(`btnSpeechOff${n}`).style.display = 'inline';
+    document.getElementById(`btnPause${n}`).style.display = 'inline';
 
     let text = '';
 
@@ -141,7 +142,21 @@ export class FormComponent implements OnInit {
     msg2Speech.onend = function() {
       document.getElementById(`btnSpeech${n}`).style.display = 'inline';
       document.getElementById(`btnSpeechOff${n}`).style.display = 'none';
+      document.getElementById(`btnPause${n}`).style.display = 'none';
+      document.getElementById(`btnPlay${n}`).style.display = 'none';
     }
+  }
+
+  textPause(n:number) {
+    document.getElementById(`btnPause${n}`).style.display = 'none';
+    document.getElementById(`btnPlay${n}`).style.display = 'inline';
+    this.synth.pause();
+  }
+
+  textPlay(n:number) {
+    document.getElementById(`btnPause${n}`).style.display = 'inline';
+    document.getElementById(`btnPlay${n}`).style.display = 'none';
+    this.synth.resume();
   }
 
   ngOnInit(): void {
