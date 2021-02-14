@@ -1,6 +1,6 @@
 {
-  "name": "asylum-assistant",
-  "short_name": "asylum-assistant",
+  "name": "Asylum Assistant",
+  "short_name": "Asylum Assistant",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
