@@ -6,6 +6,7 @@ img.countryImg {
   margin: auto;
   overflow:scroll;
   -webkit-overflow-scrolling: touch;
+  display:inline-block;
 }
 
 a {
