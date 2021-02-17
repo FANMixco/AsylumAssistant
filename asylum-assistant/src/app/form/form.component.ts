@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { Globals } from '../globals';
 
 @Component({
   selector: 'app-form',
@@ -14,6 +13,7 @@ export class FormComponent implements OnInit {
   translations: any;
   //currentLng = 'en-US';
   synth = window.speechSynthesis;
+  isRTL = false;
 
   asylumSeekerForm = this.formBuilder.group({
     fName: '',
@@ -27,10 +27,11 @@ export class FormComponent implements OnInit {
     password: ''
   });
 
-  constructor(private formBuilder: FormBuilder, private translateService: TranslateService, private globals: Globals) {
+  constructor(private formBuilder: FormBuilder, private translateService: TranslateService) {
     if (!sessionStorage.getItem('lng')) {
       window.location.href = `${document.location.origin}/home`;
     }
+    this.isRTL = sessionStorage.getItem('isRTL') === 'true' ? true : this.isRTL;
   }
 
   showTab(n:number) {
@@ -160,7 +161,9 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.showTab(this.currentTab); // Display the current tab
+    setTimeout(() => {
+      this.showTab(this.currentTab); // Display the current tab
+    }, 100);
     this.translations = this.translateService.store.translations[`${sessionStorage.getItem('lng')}`];
 
     if (!this.translations || !('speechSynthesis' in window)) {

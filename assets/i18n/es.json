@@ -25,5 +25,6 @@
   "Version": "Versión",
   "Name": "Asistente de Asilo",
   "CreatedBy": "Creado por",
-  "From": "de"
+  "From": "de",
+  "BtnExit": "Salir"
 }

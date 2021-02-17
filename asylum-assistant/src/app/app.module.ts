@@ -18,6 +18,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { TranslateComponent } from './translate/translate.component';
 import { GetLanguages } from './extensions/get-languages';
+import { FooterComponent } from './footer/footer.component';
 
 export function translateHttpLoaderFactory(http: HttpClient) {
   //return new TranslateHttpLoader(http);
@@ -32,7 +33,8 @@ export function translateHttpLoaderFactory(http: HttpClient) {
     OptionsComponent,
     AboutComponent,
     HomeComponent,
-    TranslateComponent
+    TranslateComponent,
+    FooterComponent
   ],
   imports: [
     FormsModule,
@@ -60,7 +62,7 @@ export class AppModule {
   }
 
   setLng():void {
-    let currentLng = (sessionStorage.getItem('lng') === undefined) ? window.navigator.language.substring(0, 2) : sessionStorage.getItem('lng');
+    let currentLng = (sessionStorage.getItem('lng') === undefined || sessionStorage.getItem('lng') === null) ? window.navigator.language.substring(0, 2) : sessionStorage.getItem('lng');
 
     let getLanguages = new GetLanguages(this.globals);
     let aLang = getLanguages.isLangAvailable(currentLng);

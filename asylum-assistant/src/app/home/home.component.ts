@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
 
     this.translateService.setDefaultLang(tmpLng);
 
+    sessionStorage.setItem('isRTL', countries[id - 1].IsRTL.toString());
     sessionStorage.setItem('lng', tmpLng);
     sessionStorage.setItem('countryId', id.toString());
 

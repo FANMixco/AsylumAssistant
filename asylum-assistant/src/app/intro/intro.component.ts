@@ -12,6 +12,7 @@ export class IntroComponent implements OnInit {
   lng = 'en';
   path = '';
   videoClass = 'video-fluid z-depth-1';
+  textOrientation = 'text-right';
 
   readonly defaultVideo = `assets/videos/en/intro.mp4`;
 
@@ -22,6 +23,8 @@ export class IntroComponent implements OnInit {
     if(window.innerHeight > window.innerWidth){
       this.videoClass = 'video-fluid-vertical z-depth-1';
     }
+
+    this.textOrientation = sessionStorage.getItem('isRTL') === 'true' ? 'text-left' : this.textOrientation;
   }
 
   ngOnInit(): void {

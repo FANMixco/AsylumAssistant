@@ -102,10 +102,17 @@
   </div>
 
   <div id="divOptions">
-    <div id="divOptionsInner">
+    <div *ngIf="isRTL == false" id="divOptionsInnerRight">
+      <a [routerLink]="['/options']" class="btn btn-light" translate>BtnExit</a>
       <button type="button" id="prevBtn" class="btn btn-secondary" (click)="nextPrev(-1)" translate>BtnPrev</button>
       <button type="button" id="nextBtn" class="btn btn-primary" (click)="nextPrev(1)" translate>BtnNext</button>
       <button type="submit" id="submitBtn" class="btnOff btn btn-success" translate>BtnSubmit</button>
+    </div>
+    <div *ngIf="isRTL == true" id="divOptionsInnerLeft">
+      <button type="submit" id="submitBtn" class="btnOff btn btn-success" translate>BtnSubmit</button>
+      <button type="button" id="nextBtn" class="btn btn-primary" (click)="nextPrev(1)" translate>BtnNext</button>
+      <button type="button" id="prevBtn" class="btn btn-secondary" (click)="nextPrev(-1)" translate>BtnPrev</button>
+      <a [routerLink]="['/options']" class="btn btn-light" translate>BtnExit</a>
     </div>
   </div>
 
@@ -118,3 +125,7 @@
   </div>
 
 </form>
+
+<app-footer></app-footer>
+
+<router-outlet></router-outlet>
