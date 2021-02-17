@@ -50,6 +50,18 @@ input.invalid {
   overflow: auto;
 }
 
-#divOptionsInner {
+#divOptionsInnerRight {
   float:right;
+}
+
+#divOptionsInnerRight button,.btn-light {
+  margin-right: 5px;
+}
+
+#divOptionsInnerLeft {
+  float:left;
+}
+
+#divOptionsInnerLeft button,.btn-light {
+  margin-left: 5px;
 }

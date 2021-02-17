@@ -8,10 +8,12 @@
       </video>
     </div>
 
-    <div class="text-right" [style.visibility]="isDivVisible ? 'visible' : 'hidden'">
+    <div [class]="textOrientation" [style.visibility]="isDivVisible ? 'visible' : 'hidden'">
       <a [routerLink]="['/options']" class="btn btn-success" translate>BtnContinue</a>
     </div>
   </div>
 </div>
+
+<app-footer></app-footer>
 
 <router-outlet></router-outlet>

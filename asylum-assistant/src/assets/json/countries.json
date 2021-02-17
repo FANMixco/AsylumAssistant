@@ -5,7 +5,8 @@
     "flag": "morocco",
     "lng": "ar",
     "t2s": "ar-MA",
-    "isSupported": true
+    "isSupported": true,
+    "IsRTL": true
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "flag": "tunisia",
     "lng": "ar",
     "t2s": "ar-TN",
-    "isSupported": true
+    "isSupported": true,
+    "IsRTL": true
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "flag": "libya",
     "lng": "ar",
     "t2s": "ar-LY",
-    "isSupported": false
+    "isSupported": false,
+    "IsRTL": true
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "flag": "syria",
     "lng": "ar",
     "t2s": "ar-SY",
-    "isSupported": true
+    "isSupported": true,
+    "IsRTL": true
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "flag": "sahrawi",
     "lng": "ar",
     "t2s": "ar-MA",
-    "isSupported": true
+    "isSupported": true,
+    "IsRTL": true
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "flag": "nigeria",
     "lng": "en",
     "t2s": "en-GB",
-    "isSupported": true
+    "isSupported": true,
+    "IsRTL": false
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "flag": "mali",
     "lng": "fr",
     "t2s": "fr-FR",
-    "isSupported": true
+    "isSupported": true,
+    "IsRTL": false
   },
   {
     "id": 8,
@@ -61,6 +68,7 @@
     "flag": "venezuela",
     "lng": "es",
     "t2s": "es-VE",
-    "isSupported": true
+    "isSupported": true,
+    "IsRTL": false
   }
 ]

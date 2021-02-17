@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AboutComponent } from '../about/about.component';
 import { TranslateComponent } from '../translate/translate.component';
@@ -11,8 +10,7 @@ import { TranslateComponent } from '../translate/translate.component';
 })
 export class OptionsComponent implements OnInit {
 
-  constructor(private modalService: NgbModal, private router: Router) {
-  }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
@@ -28,7 +26,10 @@ export class OptionsComponent implements OnInit {
   close() {
     sessionStorage.clear();
     setTimeout(() => {
-        this.router.navigate(['/home']);
+      let str = document.location.href;
+      str = str.substring(0, str.lastIndexOf("/"));
+
+      window.location.replace(str + '/home');
     }, 1000);
   }
 }

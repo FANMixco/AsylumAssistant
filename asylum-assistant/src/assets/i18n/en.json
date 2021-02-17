@@ -25,5 +25,6 @@
   "Version": "Version",
   "Name": "Asylum Assistant",
   "CreatedBy": "Created by",
-  "From": "from"
+  "From": "from",
+  "BtnExit": "Exit"
 }
