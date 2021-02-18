@@ -7,6 +7,11 @@
 <div class="modal-body centered">
   <div class="modal-body">
     <h1 class="text-center" translate>Name</h1>
-    <h2 class="text-center"><label translate>Version</label>: {{version}}</h2>
+    <div *ngIf="isRTL == true">
+      <h2 class="text-center">{{version}} :<label translate>Version</label></h2>
+    </div>
+    <div *ngIf="isRTL == false">
+      <h2 class="text-center"><label translate>Version</label>: {{version}}</h2>
+    </div>
   </div>
 </div>
