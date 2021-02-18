@@ -10,9 +10,11 @@ import { Globals } from '../globals';
 export class AboutComponent implements OnInit {
 
   version:string = '';
+  isRTL = false;
 
   constructor(public activeModal: NgbActiveModal, private globals: Globals) {
     this.version = globals.version;
+    this.isRTL = sessionStorage.getItem('isRTL') === 'true' ? true : this.isRTL;
   }
 
   ngOnInit(): void {
