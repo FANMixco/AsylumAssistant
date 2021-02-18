@@ -11,9 +11,10 @@ export class FormComponent implements OnInit {
 
   currentTab = 0; // Current tab is set to be the first tab (0)
   translations: any;
-  //currentLng = 'en-US';
   synth = window.speechSynthesis;
   isRTL = false;
+  dirRTL:string = "";
+  table:string = "";
 
   asylumSeekerForm = this.formBuilder.group({
     fName: '',
@@ -32,6 +33,7 @@ export class FormComponent implements OnInit {
       window.location.href = `${document.location.origin}/home`;
     }
     this.isRTL = sessionStorage.getItem('isRTL') === 'true' ? true : this.isRTL;
+    this.dirRTL = this.isRTL ? "rtl" : "";
   }
 
   showTab(n:number) {
@@ -107,33 +109,12 @@ export class FormComponent implements OnInit {
     x[n].className += " active";
   }
 
-  textToSpeechOff(n:number) {
-    document.getElementById(`btnSpeech${n}`).style.display = 'inline';
-    document.getElementById(`btnSpeechOff${n}`).style.display = 'none';
-    this.synth.cancel();
-  }
+  speakT2S() {
+    document.getElementById(`btnSpeech`).style.display = 'none';
+    document.getElementById(`btnSpeechOff`).style.display = 'inline';
+    document.getElementById(`btnPause`).style.display = 'inline';
 
-  textToSpeech(n:number) {
-    document.getElementById(`btnSpeech${n}`).style.display = 'none';
-    document.getElementById(`btnSpeechOff${n}`).style.display = 'inline';
-    document.getElementById(`btnPause${n}`).style.display = 'inline';
-
-    let text = '';
-
-    switch (n) {
-      case 1:
-        text = this.translations.text1;
-        break;
-      case 2:
-        text = this.translations.text2;
-        break;
-      case 3:
-        text = this.translations.text3;
-        break;
-      default:
-        text = this.translations.text4;
-        break;
-    }
+    let text = this.translations[`text${this.currentTab + 1}`];
 
     let msg2Speech = new SpeechSynthesisUtterance(text);
     msg2Speech.lang = sessionStorage.getItem('t2sLang');
@@ -141,48 +122,69 @@ export class FormComponent implements OnInit {
     this.synth.speak(msg2Speech);
 
     msg2Speech.onend = function() {
-      document.getElementById(`btnSpeech${n}`).style.display = 'inline';
-      document.getElementById(`btnSpeechOff${n}`).style.display = 'none';
-      document.getElementById(`btnPause${n}`).style.display = 'none';
-      document.getElementById(`btnPlay${n}`).style.display = 'none';
+      document.getElementById(`btnSpeech`).style.display = 'inline';
+      document.getElementById(`btnSpeechOff`).style.display = 'none';
+      document.getElementById(`btnPause`).style.display = 'none';
+      document.getElementById(`btnPlay`).style.display = 'none';
     }
   }
 
-  textPause(n:number) {
-    document.getElementById(`btnPause${n}`).style.display = 'none';
-    document.getElementById(`btnPlay${n}`).style.display = 'inline';
+  pauseT2S() {
+    document.getElementById(`btnPause`).style.display = 'none';
+    document.getElementById(`btnPlay`).style.display = 'inline';
     this.synth.pause();
   }
 
-  textPlay(n:number) {
-    document.getElementById(`btnPause${n}`).style.display = 'inline';
-    document.getElementById(`btnPlay${n}`).style.display = 'none';
+  playT2S() {
+    document.getElementById(`btnPause`).style.display = 'inline';
+    document.getElementById(`btnPlay`).style.display = 'none';
     this.synth.resume();
+  }
+
+  cancelT2S() {
+    document.getElementById(`btnSpeech`).style.display = 'inline';
+    document.getElementById(`btnSpeechOff`).style.display = 'none';
+    this.synth.cancel();
   }
 
   ngOnInit(): void {
     setTimeout(() => {
       this.showTab(this.currentTab); // Display the current tab
-    }, 100);
-    this.translations = this.translateService.store.translations[`${sessionStorage.getItem('lng')}`];
+      this.translations = this.translateService.store.translations[`${sessionStorage.getItem('lng')}`];
 
-    if (!this.translations || !('speechSynthesis' in window)) {
-      let x = document.getElementsByClassName("tab");
-
-      for (let i = 0; i < x.length - 2; i++) {
-        document.getElementById(`btnSpeech${i + 1}`).style.display = 'none';
+      if (!this.translations || !('speechSynthesis' in window)) {
+        document.getElementById(`divT2S`).style.display = 'none';
       }
-    }
+    }, 100);
   }
 
   onSubmit(): void {
     this.nextPrev(1);
-    console.log('form data', this.asylumSeekerForm);
-    console.log(this.asylumSeekerForm.controls['fName'].value);
-    console.log(this.asylumSeekerForm.controls['lName'].value);
-    console.log(this.asylumSeekerForm.controls['email'].value);
-    console.log(this.asylumSeekerForm.controls['tel'].value);
-    console.log(this.asylumSeekerForm.controls['username'].value);
+    document.getElementById(`divT2S`).style.display = 'none';
+
+    this.table = `<table class="table"><thead>
+      <tr>
+        <th scope="col">${this.translations.Input1Form}</th>
+        <th scope="col">${this.translations.Input2Form}</th>
+        <th scope="col">${this.translations.Input3Form}</th>
+        <th scope="col">${this.translations.Input4Form}</th>
+        <th scope="col">${this.translations.Birthday}</th>
+        <th scope="col">${this.translations.Input8Form}</th>
+        <th scope="col">${this.translations.Input9Form}</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">${this.asylumSeekerForm.controls['fName'].value}</th>
+      <td>${this.asylumSeekerForm.controls['lName'].value}</td>
+      <td>${this.asylumSeekerForm.controls['email'].value}</td>
+      <td>${this.asylumSeekerForm.controls['tel'].value}</td>
+      <td>${this.asylumSeekerForm.controls['year'].value}/${this.asylumSeekerForm.controls['month'].value}/${this.asylumSeekerForm.controls['day'].value}</td>
+      <td>${this.asylumSeekerForm.controls['username'].value}</td>
+      <td>*****</td>
+    </tr>
+    </tbody>
+    </table>`;
   }
 
 }

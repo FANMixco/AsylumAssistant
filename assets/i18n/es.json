@@ -26,5 +26,17 @@
   "Name": "Asistente de Asilo",
   "CreatedBy": "Creado por",
   "From": "de",
-  "BtnExit": "Salir"
+  "BtnExit": "Salir",
+  "TitleForm": "Registrar",
+  "Input1Form": "Nombre...",
+  "Input2Form": "Apellido...",
+  "Input3Form": "Correo...",
+  "Input4Form": "Teléfono...",
+  "Input5Form": "dd",
+  "Input6Form": "mm",
+  "Input7Form": "yyyy",
+  "Input8Form": "Usuario...",
+  "Input9Form": "Contraseña...",
+  "SubtitleForm1": "Cumpleaños",
+  "SubtitleForm2": "Enviado"
 }
