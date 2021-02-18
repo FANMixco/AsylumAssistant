@@ -26,5 +26,17 @@
   "Name": "Assistante d’asile",
   "CreatedBy": "Créé par",
   "From": "de",
-  "BtnExit": "Sortie"
+  "BtnExit": "Sortie",
+  "TitleForm": "Registre",
+  "Input1Form": "Prénom...",
+  "Input2Form": "Nom de famille...",
+  "Input3Form": "Messagerie électronique...",
+  "Input4Form": "Téléphone...",
+  "Input5Form": "dd",
+  "Input6Form": "mm",
+  "Input7Form": "yyyy",
+  "Input8Form": "Nom d'utilisateur...",
+  "Input9Form": "Mot de passe...",
+  "SubtitleForm1": "Anniversaire",
+  "SubtitleForm2": "Soumis"
 }

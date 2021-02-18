@@ -26,5 +26,17 @@
   "Name": "مساعد لشؤون اللجوء",
   "CreatedBy": "تم الإنشاء من قبل",
   "From": "من",
-  "BtnExit": "انهاء"
+  "BtnExit": "انهاء",
+  "TitleForm": "تسجيل",
+  "Input1Form": "الاسم الأول...",
+  "Input2Form": "الاسم الأخير...",
+  "Input3Form": "البريد الإلكتروني...",
+  "Input4Form": "الهاتف...",
+  "Input5Form": "دد",
+  "Input6Form": "مم",
+  "Input7Form": "...للسنة",
+  "Input8Form": "المستخدم...",
+  "Input9Form": "كلمه المرور...",
+  "SubtitleForm1": "عيد ميلاد",
+  "SubtitleForm2": "المقدمه"
 }
