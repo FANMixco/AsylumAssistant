@@ -4,9 +4,10 @@ img.countryImg {
 
 .list-group {
   margin: auto;
-  overflow:scroll;
+  overflow-y:scroll;
   -webkit-overflow-scrolling: touch;
   display:inline-block;
+  scrollbar-width: thin;
 }
 
 a {

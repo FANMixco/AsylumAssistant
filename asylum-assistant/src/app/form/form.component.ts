@@ -155,7 +155,7 @@ export class FormComponent implements OnInit {
       if (!this.translations || !('speechSynthesis' in window)) {
         document.getElementById(`divT2S`).style.display = 'none';
       }
-    }, 100);
+    }, 500);
   }
 
   onSubmit(): void {
