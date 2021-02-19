@@ -21,7 +21,12 @@ export class AboutComponent implements OnInit {
 
   styleHeader(): Object {
     if (this.isRTL) {
-      console.log(this.isRTL);
+      return { 'direction': 'rtl' };
+    }
+  }
+
+  styleHeaderCloseBtn(): Object {
+    if (this.isRTL) {
       return { 'padding': '1rem 1rem', 'margin': '-1rem auto -1rem -1rem' };
     }
   }
