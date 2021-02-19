@@ -10,6 +10,7 @@ export class FooterComponent implements OnInit {
 
   footer:string = "";
   translations: any;
+  dirRTL = "auto";
 
   constructor(private translateService: TranslateService) { }
 
@@ -22,20 +23,16 @@ export class FooterComponent implements OnInit {
       let d = new Date();
       let year:string = "2021";
 
-      if (sessionStorage.getItem('isRTL') === 'false' || sessionStorage.getItem('isRTL') === null || sessionStorage.getItem('isRTL') === undefined) {
-        if (d.getFullYear() > 2021) {
-          year += "-" + d.getFullYear().toString();
-        }
-
-        this.footer = `${this.translations.CreatedBy} <a href="https://federiconavarrete.com" target="_blank">Federico Navarrete</a> ${this.translations.From} <a href="https://supernovaic.com" target="_blank">Supernova IC</a>, ${year}`;
-      } else {
-        if (d.getFullYear() > 2021) {
-          year = d.getFullYear().toString() + "-" + year;
-        }
-
-        this.footer = `${year}, <a href="https://supernovaic.com" target="_blank">Supernova IC</a>, ${this.translations.From} <a href="https://federiconavarrete.com" target="_blank">Federico Navarrete</a> ${this.translations.CreatedBy}`;
+      if (d.getFullYear() > 2021) {
+        year += "-" + d.getFullYear().toString();
       }
-    }, 100);
+
+      this.footer = `${this.translations.CreatedBy} <a href="https://federiconavarrete.com" target="_blank">Federico Navarrete</a> ${this.translations.From} <a href="https://supernovaic.com" target="_blank">Supernova IC</a>, ${year}`;
+
+      if (!(sessionStorage.getItem('isRTL') === 'false' || sessionStorage.getItem('isRTL') === null || sessionStorage.getItem('isRTL') === undefined)) {
+        this.dirRTL = "rtl";
+      }
+    }, 500);
   }
 
 }
