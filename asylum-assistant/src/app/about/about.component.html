@@ -7,11 +7,16 @@
 <div class="modal-body centered">
   <div class="modal-body">
     <h1 class="text-center" translate>Name</h1>
-    <div *ngIf="isRTL == true">
-      <h2 class="text-center">{{version}} :<label translate>Version</label></h2>
-    </div>
-    <div *ngIf="isRTL == false">
-      <h2 class="text-center"><label translate>Version</label>: {{version}}</h2>
-    </div>
+    <h2 class="text-center" [dir]="dirRTL"><label translate>Version</label>: {{version}}</h2>
   </div>
 </div>
+
+<style *ngIf="isRTL == true">
+  .modal-header {
+    direction: rtl;
+  }
+  .modal-header .close {
+    padding: 1rem 1rem;
+    margin: -1rem auto -1rem -1rem;
+  }
+</style>

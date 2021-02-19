@@ -11,10 +11,12 @@ export class AboutComponent implements OnInit {
 
   version:string = '';
   isRTL = false;
+  dirRTL = 'auto';
 
   constructor(public activeModal: NgbActiveModal, private globals: Globals) {
     this.version = globals.version;
     this.isRTL = sessionStorage.getItem('isRTL') === 'true' ? true : this.isRTL;
+    this.dirRTL = this.isRTL ? "rtl" : this.dirRTL;
   }
 
   ngOnInit(): void {
