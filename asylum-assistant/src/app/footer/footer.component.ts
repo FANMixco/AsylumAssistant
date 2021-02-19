@@ -15,24 +15,27 @@ export class FooterComponent implements OnInit {
   constructor(private translateService: TranslateService) { }
 
   ngOnInit(): void {
-    setTimeout(() => {
       let currentLng = (sessionStorage.getItem('lng') === undefined || sessionStorage.getItem('lng') === null) ? window.navigator.language.substring(0, 2) : sessionStorage.getItem('lng');
 
-      this.translations = this.translateService.store.translations[currentLng];
+      this.translateService.use(currentLng).subscribe(() => {
+        this.translations = this.translateService.store.translations[currentLng];
 
-      let d = new Date();
-      let year:string = "2021";
+        let d = new Date();
+        let year:string = "2021";
 
-      if (d.getFullYear() > 2021) {
-        year += "-" + d.getFullYear().toString();
+        if (d.getFullYear() > 2021) {
+          year += "-" + d.getFullYear().toString();
+        }
+
+        this.footer = `${this.translations.CreatedBy} <a href="https://federiconavarrete.com" target="_blank">Federico Navarrete</a> ${this.translations.From} <a href="https://supernovaic.com" target="_blank">Supernova IC</a>, ${year}`;
+
+        if (!(sessionStorage.getItem('isRTL') === 'false' || sessionStorage.getItem('isRTL') === null || sessionStorage.getItem('isRTL') === undefined)) {
+          this.dirRTL = "rtl";
+        }
+      }, err => {
+        console.error(`Problem with language initialization.'`);
       }
-
-      this.footer = `${this.translations.CreatedBy} <a href="https://federiconavarrete.com" target="_blank">Federico Navarrete</a> ${this.translations.From} <a href="https://supernovaic.com" target="_blank">Supernova IC</a>, ${year}`;
-
-      if (!(sessionStorage.getItem('isRTL') === 'false' || sessionStorage.getItem('isRTL') === null || sessionStorage.getItem('isRTL') === undefined)) {
-        this.dirRTL = "rtl";
-      }
-    }, 500);
+    );
   }
 
 }

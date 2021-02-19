@@ -150,12 +150,17 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.showTab(this.currentTab); // Display the current tab
-      this.translations = this.translateService.store.translations[`${sessionStorage.getItem('lng')}`];
+    }, 100);
 
-      if (!this.translations || !('speechSynthesis' in window)) {
-        document.getElementById(`divT2S`).style.display = 'none';
+    this.translateService.use(sessionStorage.getItem('lng')).subscribe(() => {
+      this.translations = this.translateService.store.translations[sessionStorage.getItem('lng')];
+        if (!this.translations || !('speechSynthesis' in window)) {
+          document.getElementById(`divT2S`).style.display = 'none';
+        }
+      }, err => {
+        console.error(`Problem with language initialization.'`);
       }
-    }, 500);
+    );
   }
 
   onSubmit(): void {
