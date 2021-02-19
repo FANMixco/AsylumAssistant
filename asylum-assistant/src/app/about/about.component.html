@@ -1,6 +1,6 @@
-<div class="modal-header">
+<div class="modal-header" [ngStyle]="(isRTL) ? {'direction': 'rtl'} : {'direction': 'ltr'}">
   <h4 class="modal-title" id="modal-primary-title" translate>BtnAbout</h4>
-  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')" [ngStyle]="styleHeader()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
@@ -11,13 +11,3 @@
     <div class="text-center">Logo icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
   </div>
 </div>
-
-<style *ngIf="isRTL == true">
-  .modal-header {
-    direction: rtl;
-  }
-  .modal-header .close {
-    padding: 1rem 1rem;
-    margin: -1rem auto -1rem -1rem;
-  }
-</style>
