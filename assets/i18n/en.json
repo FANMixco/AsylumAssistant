@@ -26,5 +26,17 @@
   "Name": "Asylum Assistant",
   "CreatedBy": "Created by",
   "From": "from",
-  "BtnExit": "Exit"
+  "BtnExit": "Exit",
+  "TitleForm": "Register",
+  "Input1Form": "First name...",
+  "Input2Form": "Last name...",
+  "Input3Form": "E-mail...",
+  "Input4Form": "Phone...",
+  "Input5Form": "dd",
+  "Input6Form": "mm",
+  "Input7Form": "yyyy",
+  "Input8Form": "Username...",
+  "Input9Form": "Password...",
+  "SubtitleForm1": "Birthday",
+  "SubtitleForm2": "Submitted"
 }
