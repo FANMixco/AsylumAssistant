@@ -29,7 +29,14 @@ export class IntroComponent implements OnInit {
 
   ngOnInit(): void {
     try {
-      this.openfullscreen('introVid');
+      let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+      if (!isSafari) {
+        this.openfullscreen('introVid');
+      } else {
+        alert('Safari might not be able to play the intro. Check in a different browser.');
+        this.isDivVisible = true;
+      }
     } catch { }
   }
 
