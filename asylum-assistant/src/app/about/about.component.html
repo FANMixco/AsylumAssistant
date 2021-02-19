@@ -1,6 +1,6 @@
-<div class="modal-header" [ngStyle]="(isRTL) ? {'direction': 'rtl'} : {'direction': 'ltr'}">
+<div class="modal-header" [ngStyle]="styleHeader()">
   <h4 class="modal-title" id="modal-primary-title" translate>BtnAbout</h4>
-  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')" [ngStyle]="styleHeader()">
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')" [ngStyle]="styleHeaderCloseBtn()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
