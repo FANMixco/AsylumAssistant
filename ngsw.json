@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1613744510817,
+  "timestamp": 1613748073153,
   "index": "https://fanmixco.github.io/AsylumAssistant/index.html",
   "assetGroups": [
     {
@@ -13,8 +13,8 @@
       "urls": [
         "https://fanmixco.github.io/AsylumAssistant/favicon.ico",
         "https://fanmixco.github.io/AsylumAssistant/index.html",
-        "https://fanmixco.github.io/AsylumAssistant/main-es2015.312ec5b8bcb3d57cab00.js",
-        "https://fanmixco.github.io/AsylumAssistant/main-es5.312ec5b8bcb3d57cab00.js",
+        "https://fanmixco.github.io/AsylumAssistant/main-es2015.36350d72e205ba8ea1f0.js",
+        "https://fanmixco.github.io/AsylumAssistant/main-es5.36350d72e205ba8ea1f0.js",
         "https://fanmixco.github.io/AsylumAssistant/manifest.webmanifest",
         "https://fanmixco.github.io/AsylumAssistant/polyfills-es2015.55cbf8d7d74944ab8e7c.js",
         "https://fanmixco.github.io/AsylumAssistant/polyfills-es5.df27189f681d2f50d5be.js",
@@ -78,10 +78,10 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://fanmixco.github.io/AsylumAssistant/assets/i18n/ar.json": "70637cd4cee94aad4071bb129c93d964f2b09bed",
-    "https://fanmixco.github.io/AsylumAssistant/assets/i18n/en.json": "3e65be2a5b98194c5800a68388e8ad061de7a008",
-    "https://fanmixco.github.io/AsylumAssistant/assets/i18n/es.json": "c906b4f53437c131bdb3779a8737eab2a15d8328",
-    "https://fanmixco.github.io/AsylumAssistant/assets/i18n/fr.json": "2e4991be517a3b3aa594079ce161be869daaf51e",
+    "https://fanmixco.github.io/AsylumAssistant/assets/i18n/ar.json": "20d165bef5099087bf91a53c3a10e370c18638ad",
+    "https://fanmixco.github.io/AsylumAssistant/assets/i18n/en.json": "5123c40d9f2f97f15a4d751bea3c5ae3364fa061",
+    "https://fanmixco.github.io/AsylumAssistant/assets/i18n/es.json": "e3a35af13603122796adbc5d96a77132da25113e",
+    "https://fanmixco.github.io/AsylumAssistant/assets/i18n/fr.json": "e85b5591c8b19d5559f48113a263395173246a27",
     "https://fanmixco.github.io/AsylumAssistant/assets/icons/apple-touch-icon.png": "b65fe52810039e31123b06b1f8bf859785e78302",
     "https://fanmixco.github.io/AsylumAssistant/assets/icons/favicon-16x16.png": "a46592ace9332c11cc02c43787269bf7ea4cf4ac",
     "https://fanmixco.github.io/AsylumAssistant/assets/icons/favicon-32x32.png": "98559b7c7537b5914ab7a320fc4ba25e7edd688a",
@@ -119,9 +119,9 @@
     "https://fanmixco.github.io/AsylumAssistant/assets/videos/es/intro.mp4": "25fdcc89d7ebdc3788de560cec376cddb34368d9",
     "https://fanmixco.github.io/AsylumAssistant/assets/videos/fr/intro.mp4": "25fdcc89d7ebdc3788de560cec376cddb34368d9",
     "https://fanmixco.github.io/AsylumAssistant/favicon.ico": "c03da0e405f528c20db86a489c5d3df21cc04f5e",
-    "https://fanmixco.github.io/AsylumAssistant/index.html": "b36705df962a3174b740ef2f0a69073b4b6a83ed",
-    "https://fanmixco.github.io/AsylumAssistant/main-es2015.312ec5b8bcb3d57cab00.js": "f01b1a1b694cb8e4044eb662d3916b903e96f577",
-    "https://fanmixco.github.io/AsylumAssistant/main-es5.312ec5b8bcb3d57cab00.js": "dda80631e219066aeae8debd21d3055193842bf6",
+    "https://fanmixco.github.io/AsylumAssistant/index.html": "e0e254815b61ab9b9b7fd34139ae46083431f5ff",
+    "https://fanmixco.github.io/AsylumAssistant/main-es2015.36350d72e205ba8ea1f0.js": "41a26ced010c43f60ca9f205fb63f3f16184176a",
+    "https://fanmixco.github.io/AsylumAssistant/main-es5.36350d72e205ba8ea1f0.js": "d344023805904f9187905fae144e8fdd57babfc0",
     "https://fanmixco.github.io/AsylumAssistant/manifest.webmanifest": "42a5c08ebd32a65dc089076c2fdcc4bbb3128055",
     "https://fanmixco.github.io/AsylumAssistant/polyfills-es2015.55cbf8d7d74944ab8e7c.js": "d373e0370dbfe91a44282ee31ce09348187b2fc2",
     "https://fanmixco.github.io/AsylumAssistant/polyfills-es5.df27189f681d2f50d5be.js": "1b66bb39b8261260701e3bf4eebd73b3dbbdc5bc",
